@@ -1,30 +1,10 @@
-Dimension by HTML5 UP
-html5up.net | @ajlkn
-Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+Présentation de la solution SynApp, qui permet de faciliter la gestion des association.
+
+Elle permet entre autres de gérer des adhérents, leurs dons, leurs reçus fiscaux, le placement sur un plan, les remises de chèques, des réservations de salles, et la planification d'évènements et de relancer de manière automatisées des adhérents sur leurs promesses de dons.
+
+Elle rend accessible un espace pour les adhérents et leur permet de régler leurs dons directement via Carte bancaire.
+
+Elle leur permet de récupérer leurs documents Cerfa et de suivre leur état comptable auprès de l'association. 
 
 
-This is Dimension, a fun little one-pager with modal-ized (is that a word?) "pages"
-and a cool depth effect (click on a menu item to see what I mean). Simple, fully
-responsive, and kitted out with all the usual pre-styled elements you'd expect.
-Hope you dig it :)
-
-Demo images* courtesy of Unsplash, a radtastic collection of CC0 (public domain) images
-you can use for pretty much whatever.
-
-(* = not included)
-
-AJ
-aj@lkn.io | @ajlkn
-
-
-Credits:
-
-	Demo Images:
-		Unsplash (unsplash.com)
-
-	Icons:
-		Font Awesome (fontawesome.io)
-
-	Other:
-		jQuery (jquery.com)
-		Responsive Tools (github.com/ajlkn/responsive-tools)
+Cette application a été concue with love à Marseille, France.
