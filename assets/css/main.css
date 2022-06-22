@@ -1300,6 +1300,7 @@ input, select, textarea {
 			}
 
 		img{
+ 		    content: url("../../images/magen.png");
 			width: 86%;
     		padding-top: 9%;
 		}
