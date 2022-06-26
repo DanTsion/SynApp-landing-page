@@ -31,6 +31,101 @@
 			}, 100);
 		});
 
+		$('#buttonSubmit').on('click', function(e){
+			let objToPost = {
+				emetteur:$('#email').val(),
+				nom: $('#name').val(),
+				message: $('#message').val()
+			}
+			e.preventDefault();
+
+			if(isEmailValid && isNameValid() && isMessageValid()){
+				$.ajax({
+					type: "POST",
+					crossDomain: true,
+					data: JSON.stringify(objToPost),
+					// dataType:"json",
+					url: "http://localhost:52478/api/public/send-mail",
+					contentType:"application/json; charset=utf-8",
+					success: onSuccessCallBack
+				});
+			}
+			else{
+					alert("Merci de bien vouloir remplir tous les champs.")
+				}
+		})
+		// Validation des champs du formulaire
+		// Email
+		let isEmailValid = false;
+		const email = $("#email");
+		email.on("keyup", () => {
+			let regex = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/g;
+			let s = email[0].value;
+			if (regex.test(s)) {
+				email.css("border-color", "white");
+				$('#emailError').css('display', 'none');
+				$('#buttonSubmit').removeClass('opacity-disabled');
+				isEmailValid = true;
+
+			} else {
+				email.css("border-color", "red");
+				$('#emailError').removeClass('visibility');
+				$('#emailError').css('display', 'block');
+				$('#buttonSubmit').disabled = true;
+				
+				isEmailValid = false;
+			}
+		});
+
+		// Name
+		const name = $('#name');
+		name.on("keyup", () => {
+			if(name.val().length > 2){
+				name.css("border-color", "white");
+			$('#nameError').css('display', 'none');	
+			}
+			else {
+				name.css("border-color", "red");
+				$('#nameError').removeClass('visibility');
+				$('#nameError').css('display', 'block');
+				$('#buttonSubmit').disabled = true;
+			}
+		});
+
+		// Message
+		const message = $('#message');
+		message.on("keyup", () => {
+			if(message.val().length > 2){
+				message.css("border-color", "white");
+				$('#messageError').css('display', 'none');
+			}
+			else {
+				message.css("border-color", "red");
+				$('#messageError').removeClass('visibility');
+				$('#messageError').css('display', 'block');
+				$('#buttonSubmit').disabled = true;
+			}
+		});
+
+		function isNameValid()
+		{
+			return $("#name")[0].value.length > 2 ? true: false
+		}
+		function isMessageValid()
+		{
+			return $("#message")[0].value.length > 2 ? true: false
+		} 
+
+		function onSuccessCallBack()
+		{
+			alert("Merci pour votre message, nous revenons vers vous très prochainement !"),
+			location.href = "/";
+			console.log(success)
+		}
+
+		$('#phoneNumber').on("click", () => 
+			$('#number').toggleClass('visibility')
+		);
 	// Fix: Flexbox min-height bug on IE.
 		if (browser.name == 'ie') {
 
