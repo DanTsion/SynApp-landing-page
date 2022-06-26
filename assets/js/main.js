@@ -45,7 +45,7 @@
 					crossDomain: true,
 					data: JSON.stringify(objToPost),
 					// dataType:"json",
-					url: "http://localhost:52478/api/public/send-mail",
+					url: "https://synapp.be/api/public/send-mail",
 					contentType:"application/json; charset=utf-8",
 					success: onSuccessCallBack
 				});
@@ -119,8 +119,8 @@
 		function onSuccessCallBack()
 		{
 			alert("Merci pour votre message, nous revenons vers vous très prochainement !"),
+			$('input[type=reset').click();
 			location.href = "/";
-			console.log(success)
 		}
 
 		$('#phoneNumber').on("click", () => 
