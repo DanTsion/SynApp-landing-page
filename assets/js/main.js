@@ -118,9 +118,8 @@
 
 		function onSuccessCallBack()
 		{
-			alert("Merci pour votre message, nous revenons vers vous très prochainement !"),
 			$('input[type=reset').click();
-			location.href = "/";
+			location.href = "/#confirmationEnvoi";
 		}
 
 		$('#phoneNumber').on("click", () => 
