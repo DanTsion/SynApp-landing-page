@@ -119,7 +119,7 @@
 		function onSuccessCallBack()
 		{
 			$('input[type=reset').click();
-			location.href = "/#confirmationEnvoi";
+			$main._show('confirmationEnvoi');
 		}
 
 		$('#phoneNumber').on("click", () => 
